@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/list_maker.css">
+  </head>
+<body align="center">
+
+<h1> Edit List</h1>
+
+<div>
+</br>
+<div align="center">
+<form role="form" action='{{url_for('editList', list_id = list_id)}}', method='POST'> 
+  <div class="form-group">
+	<p>Name</p>
+		<input class="form-control" type='text' size='30' name='title' style="width: 200px; text-align:center"placeholder='{{l.title}}'>
+	<p>Description</p>
+		<input class="form-control" type='text' size='140' name='description' style="width: 500px; text-align:center"placeholder='{{l.description}}'>
+  </div>
+  </br>
+  </br>
+  <button type="submit" class="btn btn-default">Update list details</button>
+  </div>
+</div>
+
+</body>
+
+</html>

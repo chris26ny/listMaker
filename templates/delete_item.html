@@ -1,0 +1,26 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/static/css/list_maker.css">
+
+</head>
+
+<body align="center">
+
+<h1> Are you sure you want to delete this item?</h1>
+
+<div>
+  </br>
+  <form action='{{url_for('deleteItem', list_id = list_id, item_id = item_id)}}', method='POST'> 
+  <input type='submit' value='delete'>
+  </br></br>
+  <a href='{{url_for('viewList', list_id = list_id)}}'>Cancel</a>
+</div>
+
+</body>
+
+</html>

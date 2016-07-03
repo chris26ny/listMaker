@@ -1,0 +1,41 @@
+<html>
+
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/list_maker.css">
+  </head>
+
+<body style="text-align: center">
+
+    <div align="right" style="padding: 20pt"> 
+    <a style="font-size: 20pt" href='{{url_for('gdisconnect')}}'> LOGOUT </a></div>
+    <h1> ListMaker </h1><h3>a simple way to create any basic list</h3>
+    (to-do list, shopping list, recipe ingredients, itinerary, etc..) 
+    </br>
+    </br>
+    <a href='{{url_for('newList')}}'>
+    <button type="button" class="btn btn-info btn-lg">
+    <span style="color: black"> Create List</span>
+    </button>
+    </a>
+    </br></br>
+    <!-- Loop through all lists and print the title & description -->
+    {% for list in all_lists %}
+    ------------------------------------------------------------------
+    <div style="font-size: 13pt">
+    <a style="font-size: 16pt" href='{{url_for('viewList', list_id = list.id)}}'> {{list.title}}</a>
+    // {{list.description}}
+    </br>
+    <a style="color: grey; font-size: 14px" href='{{url_for('deleteList', list_id = list.id)}}'>Delete</a>
+    </div>
+    </div>
+    {% endfor %}
+    ------------------------------------------------------------------
+</body>
+
+</html>
